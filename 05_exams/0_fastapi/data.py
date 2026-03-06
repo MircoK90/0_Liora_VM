@@ -25,9 +25,16 @@ def load_questions(path: str) -> list[Question]:
 
 
 if __name__ == "__main__":
-    questions_list = load_questions("questions_en.xlsx")
-    print(questions_list[0].correct)
-    
+    print(f"Q: {q.question}")
+    print(f"A: {q.answerA}")
+    print(f"B: {q.answerB}")
+    if q.answerC:
+        print(f"C: {q.answerC}")
+    if q.answerD:
+        print(f"D: {q.answerD}")
+    print(f"Correct: {q.correct}")
+    print("-" * 40)
+    print("finished loading questions")
 
 
 
