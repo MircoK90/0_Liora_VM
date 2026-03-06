@@ -1,0 +1,78 @@
+question,subject,use,correct,responseA,responseB,responseC,responseD,remark
+What does No-SQL stand for?,Databases,Positioning test,A,Not OnlySQL,NoSQL,Not all SQL
+Cassandra and HBase are databases,Databases,Positioning test,C,relational database,object-oriented,column-oriented,graph-oriented
+MongoDB and CouchDB are databases,Databases,Positioning test,B,relational database,object-oriented,column-oriented,graph-oriented
+OrientDB and Neo4J are databases,Databases,Positioning test,D,relational database,object-oriented,column-oriented,graph-oriented
+"To index textual data, I can use",Databases,Positioning test,A,ElasticSearch,Neo4J,mysql
+What to pay attention to when choosing a database system?,Databases,Positioning test,D,Definition of a scheme,Speed ​​of reading/writing,Differentiation of accesses,All these points
+What are the three building blocks of Hadoop?,Distributed systems,Positioning test,A,"HDFS, YARN and Haddoop MapReduce","Hive, LOL and Spark","Spark, Hadoop MapReduce and Hive"
+"During the Map step of a wordcount applied to the sentence ""this sentence is a sentence"", the values ​​emitted are:",Distributed systems,Positioning test,B,"1, 2, 1, 1","1, 1, 1, 1, 1, 1","5, 0, 0, 0, 0"
+"In Hadoop, combiners allow",Distributed systems,Positioning test,C,combine inputs and outputs,to better distribute the load during the Shuffle phase,to limit the number of values ​​emitted during the Reduce step
+"In Hadoop, partitioners allow",Distributed systems,Positioning test,B,combine inputs and outputs,to better distribute the load during the Shuffle phase,limit the number of values ​​emitted during the Reduce step
+The CAP theorem opposes,Distributed systems,Positioning test,B,"Capacity, Speed, Distribution","Availability, Consistency, Distribution","Consistency, Adaptability, Power"
+Hive allows,Distributed systems,Positioning test,A,to abstract a relational database,to classify the documents in order of importance,orchestrate machine clusters
+Spark differs from Hadoop by,Distributed systems,Positioning test,D,its lack of a storage system,its many libraries including Machine Learning,writing to memory rather than to disk during the Shuffle phase,All these dots
+An asynchronous messaging system makes it possible to decorrelate consumers and producers,Data Streaming,Positioning test,A,TRUE,FALSE
+Kafka is messaging system,Data Streaming,Positioning test,D,distributed,asynchronous,publish/subscribe,All these dots
+The lambda architecture presents the layers,Data Streaming,Positioning test,D,batch,real time,service,All these dots
+Docker is used,Docker,Positioning test,A,to develop quickly and put into production easily,to improve the capabilities of a database,to improve computing power
+Docker allows persisting changes,Docker,Positioning test,C,Yes,No,Yes provided you use volumes
+Docker containers can communicate with each other using,Docker,Positioning test,B,volumes,networks,communications
+DockerHub is,Docker,Positioning test,C,a system that allows you to launch several containers at once,a container orchestration system,a Docker image directory
+Docker-compose is,Docker,Positioning test,A,a system that allows you to launch several containers at once,a container orchestration system,a Docker image directory
+Which of these problems is a classification problem:,Classification,Validation test,C,Customer segmentation,Optimal price calculation,Prediction of the benign nature of a tumor
+Which of these problems is a classification problem?,Classification,Validation test,B,Estimation of the price of a work of art,Prediction of the departure of a customer,Modeling of air flows around a reactor
+Which of these problems is a classification problem?,Classification,Validation test,"B,C",Labeling an image,Object recognition,Automatic word generation
+Do the classification algorithms allow to give a probability of belonging to a class rather than just the label?,Classification,Validation test,A,"Yes, it is in general the basis of all classification algorithms","No, this problem is a regression problem"
+What metric is used in classification?,Classification,Validation test,A,The F1-score,The RMSE,perplexity
+Which algorithm is better suited to a dataset mostly composed of qualitative variables?,Classification,Validation test,C,SVM,Logistics Regression,Decision tree
+"In a bank fraud problem, is accuracy a suitable metric?
+",Classification,Validation test,B,"Yes, since it is a classification problem.",No because the imbalance of the two classes does not allow a significant improvement of this metric
+To give a better metric in all situations,Classification,Validation test,C,To give a better metric in all situations,To be easier to interpret,Easily identify proportions of observations according to their probability
+"The specificity is defined by (T: true, F: false, P: positive, N: negative):",Classification,Validation test,B,(VP + NV) / (VP + NV + FN + FP),DV / (DV + FP),VP / (VP + FN)
+"Sensitivity is defined by (T: true, F: false, P: positive, N: negative):",Classification,Validation test,C,(VP + NV) / (VP + NV + FN + FP),DV / (DV + FP),VP / (VP + FN)
+Hadoop allows to:,Distributed systems,Validation test,D,Store data,To make calculations,Orchestrate MapReduce jobs,All these dots
+"In the MapReduce paradigm, combiners are used to:",Distributed systems,Validation test,B,Balancing the reducer workload,Decrease the number of values ​​to be emitted from mappers to reducers,Accelerate calculations,All these dots
+"In the MapReduce paradigm, partitioners serve to:",Distributed systems,Validation test,A,Balancing the reducer workload,Decrease the number of values ​​to be emitted from mappers to reducers,Accelerate calculations,All these dots
+The use of distributed systems allows,Distributed systems,Validation test,D,Speed ​​up calculations,Secure access to data,Easily expand storage capacity,All these dots
+Hadoop streaming is a tool that allows,Distributed systems,Validation test,A,To make MapReduce jobs with any programming language,Real-time data processing,Store multiple copies of a dataset,Store videos on a distributed system
+"In the case of a distributed architecture, the CAP theorem forces us to choose between:",Distributed systems,Validation test,A,Consistency and Availability,Partition and Coherence,Score and Availability
+Hive is,Distributed systems,Validation test,B,A relational database management system,An abstraction of relational DBMSs,A Hadoop library
+"For Hive, partitioning consists of",Distributed systems,Validation test,C,Cut the tables into blocks of pre-defined size,Split tables by columns,Split tables according to the values ​​of a variable
+Pig lets,Distributed systems,Validation test,A,Make writing MapReduce jobs easier and more intuitive,Accelerate calculations performed on Hadoop,To orchestrate Hive,All these dots
+Sqoop is used,Distributed systems,Validation test,A,To transfer data from RDBMS to HDFS and vice versa,To make calculations in real time,Automate Map Reduce jobs,All these dots
+Data science is ...,data science,Total Boot Camp,A,A set of techniques and tools used to get value out of data.,A scientific approach to data acquisition.,A set of empirical approaches used to define theoretical formulas and /or equations thanks to data.
+Its applications are ...,data science,Total Boot Camp,A,Limited to a small amount of fields and use cases.,Close to unlimited and find use cases in almost every known fields where data can be collected.
+What are the first things you want to do when you start a Data Science project?,data science,Total Boot Camp,A C,Define the problem.,Choose the model you want to implement.,Obtain the data and check if it fits our standard.,Ask Paul what to do next.
+Are every dataset worth a Data Science project?,data science,Total Boot Camp,A,No.,"If it's big enough, yes.",Yes.
+"When the dataset is all set and obtained, what do you need to do?",data science,Total Boot Camp,B C,Run a model on it and then do a series of statistical tests on it.,Explore it and do a series of statistical tests on it.,Pre-process it by cleaning it of missing values ​​or irrelevant data.
+What are the best tools you can use when starting a project?,data science,Total Boot Camp,A B C D,Data Visualization.,Statistical testing.,Expert intuition.,Correlation matrix,Gut-feelings.
+"When building a model, you have to",data science,Total Boot Camp,B,Look out for parameters that can be optimized and optimize them.,Train it on all the data available.
+"Your model is all done and working, what's next?",data science,Total Boot Camp,B,My project is done!,Analyze the results and tune the existing model to fit best the problem defined initially.
+What is Machine learning?,machine-learning,Total Boot Camp,B,The phenomenon in which an algorithm realizes it is not paid enough and puts itself on a strike.,An application of artificial intelligence that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.,Exactly what Datascientest offers: a way to learn through machines.,When an algorithm is programmed to adapt itself to a given situation.
+Supervised learning ...,machine-learning,Total Boot Camp,A C,Is when the data we use to fit the model on is labeled.,Is when the algorithm includes steps to check the progression of the computation process.,Allows to predict the value or the class of a new element.,"Allows data partitioning according to the features, distribution density estimation and dimension reduction."
+Unsupervised learning ...,machine-learning,Total Boot Camp,A C,Is when the data we feed to our model is not labeled.,Allows to predict the value or the class of a new element.,"Allows data partitioning according to the features, distribution density estimation and dimension reduction."
+Classification,machine-learning,Total Boot Camp,B,Is used when the target we aim to predict is continuous.,Is used when the target we aim to work on is discrete.,Is not a method needing artificial intelligence techniques.
+Regression,machine-learning,Total Boot Camp,A,Is used when the target we aim to predict is continuous.,Is used when the target we aim to predict is discrete.,Gives the same results with two points or a thousand.
+Overfitting is,machine-learning,Total Boot Camp,A,When the model fits too much the training data and don't generalize enough.,When the model takes too much time to train on the data.,When the algorithm can't store anymore the results of the fitting process.
+A way to handle imbalanced datasets is,machine-learning,Total Boot Camp,"B,C",Filtering,Undersampling,Oversampling
+Why use APIs?,Automation,Validation test,D,To isolate end-user services,To standardize communications between services,To enable easy evolution of services,All these dots
+"By using Flask, we allow a user or a machine to use a service with",Automation,Validation test,C,SQL,Python,HTTP,Java
+Why use Docker?,Automation,Validation test,D,To easily and quickly deploy processes,To isolate processes from the host machine,To test services quickly,All these dots
+"If we draw a parallel with object-oriented programming, Docker container images are the equivalent of",Automation,Validation test,A,Classes,Class instances,Methods,Objects
+"To facilitate the passage of files between the host machine and a Docker container, you can use the",Automation,Validation test,C,Pictures,Networks,volumes,Containers
+"To facilitate communication between the host machine and a Docker container, you can use the",Automation,Validation test,B,Pictures,Networks,volumes,Containers
+What command launches a Docker container?,Automation,Validation test,B,docker image run image_name,docker container run image_name,docker image pull image_name,docker container pull image_name
+What is Docker-Compose used for?,Automation,Validation test,A,List public container images,To deploy several containers at the same time,To create your own Docker image,All these dots
+What is Docker-Compose used for?,Automation,Validation test,B,List public container images,To deploy several containers at the same time,To create your own Docker image,All these dots
+"In Airflow, the DAG lists",Automation,Validation test,D,Tasks to be performed,Actions to take in case of failure,The sequence of tasks to be performed,All these dots
+What is the difference between processing time and event time?,Data Streaming,Validation test,B,One corresponds to the calculation start time while the other corresponds to the time required for the calculation,One corresponds to the entry of the data into the system while the other corresponds to the date of creation of the data,They are actually the same thing
+Kafka is a messaging system,Data Streaming,Validation test,A,Publish/Subscribe + Asynchronous,Publication/Subscription + Synchronous,Tail Oriented + Asynchronous,Tail oriented + Synchronous
+"In Kafka, brokers allow you to",Data Streaming,Validation test,,distribute intermediate data storage,distribute the data flow load,prevent system crashes,all these dots
+"In Kafka, in a consumer group, consumers access",Data Streaming,Validation test,,each to all available data,each to a part of the data relating to its consumption capacity,"each to a part of the data, evenly distributed"
+What is the difference between Hadoop and Spark?,Data Streaming,Validation test,,Hadoop is a compute and storage system while Spark is just a compute system,Spark is written in Scala while Hadoop is written in Java,Spark writes values ​​to memory while Hadoop writes them to disk,All these dots
+Which Spark library does not exist?,Data Streaming,Validation test,,SparkSQL,SparkML,Spark Streaming,Spark IO
+What does RDD mean?,Data Streaming,Validation test,,Raw distributed dataset,Redundant Distributed Dataset,Resilient Distributed DataSet
+What is DAG?,Data Streaming,Validation test,,A representation of the tasks to be performed,A device that optimizes calculations
+Dstreams are defined by,Data Streaming,Validation test,,A time limit,A space limit,A randomly determined limit,All these dots
+"In HBase, data is stored by",Data Streaming,Validation test,,Lines,Column families,Keys
