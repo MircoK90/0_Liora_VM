@@ -6,11 +6,13 @@ from models import Question, NewQuestion
 from auth import parse_basic_auth
 from logic import generate_mcq
 from auth import USERS, ADMIN_PW, get_current_user
+from fastapi.responses import FileResponse
 
 api = FastAPI()
 
 # pre 
-QUESTIONS = load_questions
+path = "questions_en.xlsx"
+QUESTIONS = load_questions(path)     # forgott()!
 
 @api.get("/")
 def get_index():
@@ -38,7 +40,7 @@ def get_mcq(
     username: str=Depends(get_current_user)
 ):
     try:
-        result = generate_mcq(QUESTIONS, use, subjects, n)
+        result = generate_mcq(QUESTIONS, use, subjects.split(","), n)       #split is important to iterate via the 
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     
@@ -49,6 +51,10 @@ def get_mcq(
     #  curl -H "Authorization: Basic alice:wonderland "http://localhost:8000/mcq?use=Positioning%20test&subjects=Databases&n=5"
 
     # curl -H Authorization: Basic <>
+
+@api.get("/quiz")
+def get_quiz():
+    return FileResponse("quiz.html")
 
 
 
