@@ -55,3 +55,4 @@ def startup_event():
 # start command
 # uvicorn main:api --reload --host 0.0.0.0 --port 8000
 # localhost:8000
+# git push
