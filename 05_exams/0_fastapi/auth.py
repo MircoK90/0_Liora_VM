@@ -7,7 +7,8 @@ from fastapi import Header
 USERS = {
     "alice": "wonderland",
     "bob": "builder",
-    "clementine": "mandarine"
+    "clementine": "mandarine",
+    "admin" : "4dm1N"
 }
 ADMIN_PW = "4dm1N"
 
@@ -23,8 +24,8 @@ def parse_basic_auth(authorization: str = Header(...)):             # gets its i
     raw = authorization[6:] # why 6, ah due Basic_
     if ":" not in raw:
         raise HTTPException(status_code=401, detail="Invalid authentication Format")
-    username, password = raw.split(":", 1) # 1 due after :?
 
+    username, password = raw.split(":", 1) # 1 due after :?
     return  username, password
 
 

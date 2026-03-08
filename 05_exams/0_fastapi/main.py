@@ -9,6 +9,9 @@ from auth import USERS, ADMIN_PW, get_current_user
 
 api = FastAPI()
 
+# pre 
+QUESTIONS = load_questions
+
 @api.get("/")
 def get_index():
     return {"Starup" : "landing_page"}
@@ -30,9 +33,9 @@ def get_questions(user: str = Depends(get_current_user)):
 @api.get("/mcq")
 def get_mcq(
     use:str,
-    subjects:list[str],
+    subjects:str,
     n: int = 5,
-    user: str=Depends(get_current_user)
+    username: str=Depends(get_current_user)
 ):
     try:
         result = generate_mcq(QUESTIONS, use, subjects, n)
@@ -47,11 +50,6 @@ def get_mcq(
 
     # curl -H Authorization: Basic <>
 
-@api.on_event("startup")               # put all qestions into ram or so
-def startup_event():
-    global QUESTIONS                                                #all Questions in BIG LETTERS
-    QUESTIONS = load_questions("questions_en.xlsx")
-    print(f"Loaded all {len(QUESTIONS)} questions.")
 
 
 # Seection MK 

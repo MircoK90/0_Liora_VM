@@ -35,4 +35,4 @@ class NewQuestion(BaseModel):
 	answerC: Optional[str] = None
 	answerD: Optional[str] = None
 
-print("test_yeah") # dows it tun with nano and in the VM
+
