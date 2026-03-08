@@ -2,10 +2,10 @@
 import random
 from models import Question
 
-VALID_COUNTS = {5, 10, 20}
+VALID_COUNTS = {5, 10, 20}   # from the task
 
 def filter_questions(questions: list[Question], use: str, subjects: list[str]) -> list[Question]:
-    """Filtert nach Testtyp (use) und Kategorien (subjects)."""
+    """filters (use) ans categories (subjects)."""
     return [
         q for q in questions
         if q.use == use and q.subject in subjects
@@ -13,7 +13,7 @@ def filter_questions(questions: list[Question], use: str, subjects: list[str]) -
 
 
 def select_random(questions: list[Question], n: int) -> list[Question]:
-    """Wählt n zufällige Fragen aus."""
+    """Select random questions."""
     if n not in VALID_COUNTS:
         raise ValueError(f"Ungültige Anzahl: {n}. Erlaubt sind {VALID_COUNTS}.")
 
