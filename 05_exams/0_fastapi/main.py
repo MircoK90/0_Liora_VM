@@ -31,7 +31,7 @@ def get_questions(user: str = Depends(get_current_user)):
 def get_mcq(
     use:str,
     subjects:list[str],
-    n=int,
+    n: int = 5,
     user: str=Depends(get_current_user)
 ):
     try:
@@ -43,6 +43,9 @@ def get_mcq(
     # testing localhost:8000/mcq?use=Validation test&subjects=Distributed systems&n=5
     #  curl -H "Authorization: Basic alice:wonderland" \
     # "http://localhost:8000/mcq?use=Positioning%20test&subjects=Databases&n=5"
+    #  curl -H "Authorization: Basic alice:wonderland "http://localhost:8000/mcq?use=Positioning%20test&subjects=Databases&n=5"
+
+    # curl -H Authorization: Basic <>
 
 @api.on_event("startup")               # put all qestions into ram or so
 def startup_event():
