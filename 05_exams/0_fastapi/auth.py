@@ -4,7 +4,6 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi import Header
 
 
-
 USERS = {
     "alice": "wonderland",
     "bob": "builder",
@@ -29,6 +28,7 @@ def parse_basic_auth(authorization: str = Header(...)):             # gets its i
     return  username, password
 
 
+# 
 def get_current_user(auth: str = Depends(parse_basic_auth)):
     username, password = auth
     if username not in USERS or USERS[username] != password:
@@ -41,11 +41,13 @@ def get_current_user(auth: str = Depends(parse_basic_auth)):
 def require_admin(auth = Depends(parse_basic_auth)):
     username, password = auth
 
-    if username in USERS and USERS[username] == ADMIN_PW:
-        
+    if username in USERS and USERS[username] == ADMIN_PW:           # whoever the pw have, he would have access. lets see if Line 
+        return username, password
+    
     if password != ADMIN_PW:
         raise HTTPException(status_code=403, detail="Admin privileges required")
 
     return username
 
 # print("test_auth_runtrough")
+

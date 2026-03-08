@@ -9,10 +9,11 @@ from auth import USERS, ADMIN_PW, get_current_user
 
 api = FastAPI()
 
-@api.on_event("startup")               # put all qestions into ram or so
-def startup_event():
-    global QUESTIONS
-    QUESTIONS = load_questions("questions_en.xlsx")
+@api.get("/")
+def get_index():
+    return {"Starup" : "landing_page"}
+
+
 
 @api.get("/health")
 def health():
@@ -21,15 +22,36 @@ def health():
 
 
 @api.get("/questions")
+
 def get_questions(user: str = Depends(get_current_user)):
     return QUESTIONS
 
 
+@api.get("/mcq")
+def get_mcq(
+    use:str,
+    subjects:list[str],
+    n=int,
+    user: str=Depends(get_current_user)
+):
+    try:
+        result = generate_mcq(QUESTIONS, use, subjects, n)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    
+    return result
+    # testing localhost:8000/mcq?use=Validation test&subjects=Distributed systems&n=5
+    #  curl -H "Authorization: Basic alice:wonderland" \
+    # "http://localhost:8000/mcq?use=Positioning%20test&subjects=Databases&n=5"
 
-
-
+@api.on_event("startup")               # put all qestions into ram or so
+def startup_event():
+    global QUESTIONS                                                #all Questions in BIG LETTERS
+    QUESTIONS = load_questions("questions_en.xlsx")
+    print(f"Loaded all {len(QUESTIONS)} questions.")
 
 
 # Seection MK 
 # start command
 # uvicorn main:api --reload --host 0.0.0.0 --port 8000
+# localhost:8000
