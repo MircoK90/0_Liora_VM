@@ -55,5 +55,6 @@ def get_mcq(
 # Seection MK 
 # start command
 # uvicorn main:api --reload --host 0.0.0.0 --port 8000
+# uvicorn main:api --host 0.0.0.0 --port 8000
 # localhost:8000
 # git push
