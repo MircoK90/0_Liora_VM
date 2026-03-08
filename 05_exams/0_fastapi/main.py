@@ -5,7 +5,7 @@ from data import load_questions
 from models import Question, NewQuestion
 from auth import parse_basic_auth
 from logic import generate_mcq
-from auth import USERS, ADMIN_PW
+from auth import USERS, ADMIN_PW, get_current_user
 
 api = FastAPI()
 
@@ -19,9 +19,17 @@ def health():
     return {"status": "ok"}
 
 
+
 @api.get("/questions")
-def get_questions(auth: str = Depends(parse_basic_auth)):
-    username, password = auth
-    if username not in USERS or USERS[username] != password:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+def get_questions(user: str = Depends(get_current_user)):
     return QUESTIONS
+
+
+
+
+
+
+
+# Seection MK 
+# start command
+# uvicorn main:api --reload --host 0.0.0.0 --port 8000
