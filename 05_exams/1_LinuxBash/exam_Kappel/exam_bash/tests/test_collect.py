@@ -47,3 +47,8 @@ def test_sales_csv_structure():
 
         print("End of CSV structure test")
         print(f"=== Test completed ===\n")
+
+
+# to be dured to be execurted
+# if __name__ == "__main__":
+#     test_sales_csv_structure()
