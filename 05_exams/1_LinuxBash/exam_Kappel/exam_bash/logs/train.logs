@@ -261,3 +261,93 @@
 2026-03-10 16:28:04.198363 - RMSE: 6.113, MAE: 5.320, R2: 0.023
 2026-03-10 16:28:04.201108 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1628.pkl
 2026-03-10 16:28:04 - Training finished.
+2026-03-10 16:40:01 - Training is Running ...
+2026-03-10 16:40:03.947912 - Starting training
+2026-03-10 16:40:03.991969 - RMSE: 6.112, MAE: 5.332, R2: 0.022
+2026-03-10 16:40:03.996039 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1640.pkl
+2026-03-10 16:40:04 - Training finished.
+2026-03-10 16:41:01 - Training is Running ...
+2026-03-10 16:41:03.741570 - Starting training
+2026-03-10 16:41:03.777170 - RMSE: 6.100, MAE: 5.324, R2: 0.022
+2026-03-10 16:41:03.779227 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1641.pkl
+2026-03-10 16:41:04 - Training finished.
+2026-03-10 16:42:01 - Training is Running ...
+2026-03-10 16:42:03.545522 - Starting training
+2026-03-10 16:42:03.581758 - RMSE: 6.101, MAE: 5.331, R2: 0.021
+2026-03-10 16:42:03.583945 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1642.pkl
+2026-03-10 16:42:03 - Training finished.
+2026-03-10 16:43:01 - Training is Running ...
+2026-03-10 16:43:04.248714 - Starting training
+2026-03-10 16:43:04.285345 - RMSE: 6.093, MAE: 5.327, R2: 0.021
+2026-03-10 16:43:04.287326 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1643.pkl
+2026-03-10 16:43:04 - Training finished.
+2026-03-10 16:44:01 - Training is Running ...
+2026-03-10 16:44:03.908849 - Starting training
+2026-03-10 16:44:03.944253 - RMSE: 6.092, MAE: 5.319, R2: 0.020
+2026-03-10 16:44:03.946275 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1644.pkl
+2026-03-10 16:44:04 - Training finished.
+2026-03-10 16:45:01 - Training is Running ...
+2026-03-10 16:45:03.758870 - Starting training
+2026-03-10 16:45:03.794821 - RMSE: 6.078, MAE: 5.307, R2: 0.018
+2026-03-10 16:45:03.796832 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1645.pkl
+2026-03-10 16:45:04 - Training finished.
+2026-03-10 16:46:01 - Training is Running ...
+2026-03-10 16:46:03.564924 - Starting training
+2026-03-10 16:46:03.599992 - RMSE: 6.092, MAE: 5.330, R2: 0.017
+2026-03-10 16:46:03.602586 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1646.pkl
+2026-03-10 16:46:03 - Training finished.
+2026-03-10 16:47:01 - Training is Running ...
+2026-03-10 16:47:04.301931 - Starting training
+2026-03-10 16:47:04.338404 - RMSE: 6.080, MAE: 5.318, R2: 0.017
+2026-03-10 16:47:04.340596 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1647.pkl
+2026-03-10 16:47:04 - Training finished.
+2026-03-10 16:48:01 - Training is Running ...
+2026-03-10 16:48:04.099140 - Starting training
+2026-03-10 16:48:04.135032 - RMSE: 6.076, MAE: 5.317, R2: 0.016
+2026-03-10 16:48:04.137660 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1648.pkl
+2026-03-10 16:48:04 - Training finished.
+2026-03-10 16:49:01 - Training is Running ...
+2026-03-10 16:49:03.858584 - Starting training
+2026-03-10 16:49:03.948652 - RMSE: 6.070, MAE: 5.309, R2: 0.017
+2026-03-10 16:49:03.950755 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1649.pkl
+2026-03-10 16:49:04 - Training finished.
+2026-03-10 16:50:01 - Training is Running ...
+2026-03-10 16:50:03.645614 - Starting training
+2026-03-10 16:50:03.711237 - RMSE: 6.081, MAE: 5.325, R2: 0.016
+2026-03-10 16:50:03.722798 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1650.pkl
+2026-03-10 16:50:04 - Training finished.
+2026-03-10 16:51:01 - Training is Running ...
+2026-03-10 16:51:03.360551 - Starting training
+2026-03-10 16:51:03.397777 - RMSE: 6.074, MAE: 5.318, R2: 0.015
+2026-03-10 16:51:03.399784 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1651.pkl
+2026-03-10 16:51:03 - Training finished.
+2026-03-10 16:52:01 - Training is Running ...
+2026-03-10 16:52:04.162603 - Starting training
+2026-03-10 16:52:04.200939 - RMSE: 6.081, MAE: 5.327, R2: 0.013
+2026-03-10 16:52:04.203312 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1652.pkl
+2026-03-10 16:52:04 - Training finished.
+2026-03-10 16:53:01 - Training is Running ...
+2026-03-10 16:53:03.878907 - Starting training
+2026-03-10 16:53:03.920843 - RMSE: 6.080, MAE: 5.323, R2: 0.013
+2026-03-10 16:53:03.922840 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1653.pkl
+2026-03-10 16:53:04 - Training finished.
+2026-03-10 16:54:01 - Training is Running ...
+2026-03-10 16:54:03.551119 - Starting training
+2026-03-10 16:54:03.595575 - RMSE: 6.102, MAE: 5.353, R2: 0.013
+2026-03-10 16:54:03.600183 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1654.pkl
+2026-03-10 16:54:03 - Training finished.
+2026-03-10 16:55:01 - Training is Running ...
+2026-03-10 16:55:04.315642 - Starting training
+2026-03-10 16:55:04.360114 - RMSE: 6.083, MAE: 5.330, R2: 0.013
+2026-03-10 16:55:04.362441 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1655.pkl
+2026-03-10 16:55:04 - Training finished.
+2026-03-10 16:56:01 - Training is Running ...
+2026-03-10 16:56:03.999241 - Starting training
+2026-03-10 16:56:04.036106 - RMSE: 6.080, MAE: 5.324, R2: 0.014
+2026-03-10 16:56:04.038193 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1656.pkl
+2026-03-10 16:56:04 - Training finished.
+2026-03-10 16:57:01 - Training is Running ...
+2026-03-10 16:57:03.701102 - Starting training
+2026-03-10 16:57:03.735632 - RMSE: 6.082, MAE: 5.321, R2: 0.014
+2026-03-10 16:57:03.737603 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1657.pkl
+2026-03-10 16:57:04 - Training finished.

@@ -424,3 +424,83 @@
 2026-03-10 16:27:01 - preprocessing finished.
 2026-03-10 16:28:01 - preprocessing ...
 2026-03-10 16:28:01 - preprocessing finished.
+2026-03-10 16:37:22 - preprocessing ...
+2026-03-10 16:37:23.030577 --- Starting preprocessing
+2026-03-10 16:37:23.045121 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_163723.csv
+2026-03-10 16:37:23 - preprocessing finished.
+2026-03-10 16:37:42 - preprocessing ...
+2026-03-10 16:37:42.758733 --- Starting preprocessing
+2026-03-10 16:37:42.766374 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_163742.csv
+2026-03-10 16:37:42 - preprocessing finished.
+2026-03-10 16:40:01 - preprocessing ...
+2026-03-10 16:40:02.304923 --- Starting preprocessing
+2026-03-10 16:40:02.314606 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164002.csv
+2026-03-10 16:40:02 - preprocessing finished.
+2026-03-10 16:41:01 - preprocessing ...
+2026-03-10 16:41:02.025437 --- Starting preprocessing
+2026-03-10 16:41:02.036050 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164102.csv
+2026-03-10 16:41:02 - preprocessing finished.
+2026-03-10 16:42:01 - preprocessing ...
+2026-03-10 16:42:01.819209 --- Starting preprocessing
+2026-03-10 16:42:01.829512 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164201.csv
+2026-03-10 16:42:01 - preprocessing finished.
+2026-03-10 16:43:01 - preprocessing ...
+2026-03-10 16:43:02.625429 --- Starting preprocessing
+2026-03-10 16:43:02.637061 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164302.csv
+2026-03-10 16:43:02 - preprocessing finished.
+2026-03-10 16:44:01 - preprocessing ...
+2026-03-10 16:44:02.349388 --- Starting preprocessing
+2026-03-10 16:44:02.359427 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164402.csv
+2026-03-10 16:44:02 - preprocessing finished.
+2026-03-10 16:45:01 - preprocessing ...
+2026-03-10 16:45:02.077653 --- Starting preprocessing
+2026-03-10 16:45:02.088594 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164502.csv
+2026-03-10 16:45:02 - preprocessing finished.
+2026-03-10 16:46:01 - preprocessing ...
+2026-03-10 16:46:01.965308 --- Starting preprocessing
+2026-03-10 16:46:01.976897 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164601.csv
+2026-03-10 16:46:02 - preprocessing finished.
+2026-03-10 16:47:01 - preprocessing ...
+2026-03-10 16:47:02.689957 --- Starting preprocessing
+2026-03-10 16:47:02.700632 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164702.csv
+2026-03-10 16:47:02 - preprocessing finished.
+2026-03-10 16:48:01 - preprocessing ...
+2026-03-10 16:48:02.419727 --- Starting preprocessing
+2026-03-10 16:48:02.429741 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164802.csv
+2026-03-10 16:48:02 - preprocessing finished.
+2026-03-10 16:49:01 - preprocessing ...
+2026-03-10 16:49:02.223914 --- Starting preprocessing
+2026-03-10 16:49:02.234398 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_164902.csv
+2026-03-10 16:49:02 - preprocessing finished.
+2026-03-10 16:50:01 - preprocessing ...
+2026-03-10 16:50:01.963738 --- Starting preprocessing
+2026-03-10 16:50:01.974703 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165001.csv
+2026-03-10 16:50:02 - preprocessing finished.
+2026-03-10 16:51:01 - preprocessing ...
+2026-03-10 16:51:01.793571 --- Starting preprocessing
+2026-03-10 16:51:01.805407 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165101.csv
+2026-03-10 16:51:01 - preprocessing finished.
+2026-03-10 16:52:01 - preprocessing ...
+2026-03-10 16:52:02.529328 --- Starting preprocessing
+2026-03-10 16:52:02.540580 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165202.csv
+2026-03-10 16:52:02 - preprocessing finished.
+2026-03-10 16:53:01 - preprocessing ...
+2026-03-10 16:53:02.256853 --- Starting preprocessing
+2026-03-10 16:53:02.267013 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165302.csv
+2026-03-10 16:53:02 - preprocessing finished.
+2026-03-10 16:54:01 - preprocessing ...
+2026-03-10 16:54:01.946190 --- Starting preprocessing
+2026-03-10 16:54:01.956858 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165401.csv
+2026-03-10 16:54:02 - preprocessing finished.
+2026-03-10 16:55:01 - preprocessing ...
+2026-03-10 16:55:02.655276 --- Starting preprocessing
+2026-03-10 16:55:02.665701 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165502.csv
+2026-03-10 16:55:02 - preprocessing finished.
+2026-03-10 16:56:01 - preprocessing ...
+2026-03-10 16:56:02.437453 --- Starting preprocessing
+2026-03-10 16:56:02.451212 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165602.csv
+2026-03-10 16:56:02 - preprocessing finished.
+2026-03-10 16:57:01 - preprocessing ...
+2026-03-10 16:57:02.079996 --- Starting preprocessing
+2026-03-10 16:57:02.090087 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165702.csv
+2026-03-10 16:57:02 - preprocessing finished.

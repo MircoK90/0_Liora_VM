@@ -9,7 +9,7 @@
 # start: exam_bash/scripts/preprocessed.sh
 
 
-
+source "$(dirname "$0")/../../venv/bin/activate"               # important if venv NOT activ
 
 LOG_FILE="logs/preprocessed.logs"                                           #no " "
 echo "$(date '+%Y-%m-%d %H:%M:%S') - preprocessing ..." >> $LOG_FILE

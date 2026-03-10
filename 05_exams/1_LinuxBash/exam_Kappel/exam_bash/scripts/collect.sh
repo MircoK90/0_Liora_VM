@@ -49,7 +49,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Data ... " >> "$LOG_FILE"
 
 
 
-cp "$RAW_DIR/sales_data.csv" "$file"                # cp to concat new data from api, 
+# cp to concat new data from api, 
 latest=$(ls -t "$RAW_DIR"/sales_2*.csv 2>/dev/null | head -1)
 if [ -z "$latest" ]; then
     cp "$RAW_DIR/sales_data.csv" "$file"                        # use sales_data
