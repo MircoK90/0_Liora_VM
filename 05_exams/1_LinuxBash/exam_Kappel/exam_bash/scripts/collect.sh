@@ -35,16 +35,28 @@
 RAW_DIR="data/raw"
 LOG_FILE="logs/collect.logs"
 
+# Create Folder if not there
 mkdir -p "$RAW_DIR"
 mkdir -p "logs"
 
-# filevreation
+# filecreation
 timestamp=$(date '+%Y%m%d_%H%M%S')      # plus inside!  WITHOUT " "!!!!!!
 file="$RAW_DIR/sales_$timestamp.csv"    
 
+#Start wih loggin for collectiopn
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Data ... " >> "$LOG_FILE"
-cp "$RAW_DIR/sales_data.csv" "$file"                # cp ultra important to concat the processed list old , aand new from the api!
-echo "" >> "$file"                                  # newline to keep format due concatineng
+
+
+
+
+cp "$RAW_DIR/sales_data.csv" "$file"                # cp to concat new data from api, 
+latest=$(ls -t "$RAW_DIR"/sales_2*.csv 2>/dev/null | head -1)
+if [ -z "$latest" ]; then
+    cp "$RAW_DIR/sales_data.csv" "$file"                        # use sales_data
+else
+    cp "$latest" "$file"                                        # use last created file (date)
+fi
+echo "" >> "$file"                                              # newline to keep format due concatineng
 
 # API integration
 MODELS=("rtx3060" "rtx3070" "rtx3080" "rtx3090" "rx6700") # as LIST!
