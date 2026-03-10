@@ -26,3 +26,31 @@
 #     - The retrieved sales data
 #     - Any possible errors
 # ==============================================================================
+
+
+#!/bin/bash
+
+RAW_DIR = "data/raw"
+LOG_FILE = "logs/collect.logs"
+
+mkdir -p "$RAW_DIR"
+mkdir -p "logs"
+
+# filevreation
+timestamp = $(date '+%Y%m%d_%H%M%S')      # plus inside!
+file = "$RAW_DIR/sales_$timestamp.csv"    
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Data ... " >> "$LOG_FILE"
+
+# mk test
+cat <<EOF > "$file"
+timestamp,model,sales
+2025-04-25T09:06:57Z,rtx3060,13
+2025-04-25T09:06:57Z,rtx3070,17
+2025-04-25T09:06:57Z,rtx3080,17
+2025-04-25T09:06:57Z,rtx3090,14
+2025-04-25T09:06:57Z,rx6700,16
+EOF
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Saved " >> "$LOG_FILE"
+

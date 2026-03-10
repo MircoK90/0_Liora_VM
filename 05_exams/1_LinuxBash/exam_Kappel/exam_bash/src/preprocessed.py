@@ -40,15 +40,17 @@ def preprocessing():
    # Load war file 
    df = pd.read_csv(RAW_File)   # to be sure always last file
 
-   # simple cleaner
+   # simple cleaner AND deleting timestamp due assert command in the tests scripts
    df = df.dropna()
-
+   df = df.drop(columns = [col for col in df.columns if col =="timestamp"], errors="ignore")
+   df["model"] = df["model"].astype("category").cat.codes
+   df = df.astype(int)
    # existing dir
    os.makedirs(PROCESSED_DIR, exist_ok=True)            # no linux mkdir 
 
    # create (empty) ouput file
    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")   # format lile testscropt
-   output_file = os.path.join(PROCESSED_DIR, f"preprocessed_{timestamp}.csv")
+   output_file = os.path.join(PROCESSED_DIR, f"sales_processed_{timestamp}.csv")   #sales_processed_ from testfile
 
    # concat df and scv once again
    df.to_csv(output_file, index=False)
@@ -58,7 +60,7 @@ def preprocessing():
    return output_file
 
 
-
+# gets executed only for debug
 if __name__ == "__main__":
-    preprocessing()
-print("test")
+   preprocessing()
+   print("test")

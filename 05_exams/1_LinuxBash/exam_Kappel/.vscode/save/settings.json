@@ -1,0 +1,12 @@
+{
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["--init-file", "/home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/start.sh"]
+    },
+    "start": {
+      "path": "/home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/start.sh"
+    }
+  }
+}

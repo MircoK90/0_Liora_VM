@@ -1,0 +1,6 @@
+2026-03-10 08:52:27,000 - INFO - Model found: model/model.pkl
+
+=== Test started (2026-03-10 08:52:27) ===
+Starting test for model file presence
+Test passed: The model file exists.
+=== Test completed (2026-03-10 08:52:27) ===
