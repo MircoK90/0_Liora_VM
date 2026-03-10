@@ -1,0 +1,18 @@
+
+del
+crontab -r
+
+runnin?
+ystemctl status cron
+
+start:
+crontab scripts/cron.txt
+
+apt start / test
+./api &
+curl "http://0.0.0.0:5000/rtx3060"
+OR
+uvicorn api:app --reload (when py file)
+
+REEALTIME Log
+tail -f logs/collect.logs

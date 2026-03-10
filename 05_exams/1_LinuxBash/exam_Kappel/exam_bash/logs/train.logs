@@ -41,3 +41,13 @@
 2026-03-10 07:52:41.041910 - Starting training
 2026-03-10 07:52:41.084723 - RMSE: 6.125, MAE: 5.331, R2: 0.024
 2026-03-10 07:52:41.087009 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_0752.pkl
+2026-03-10 13:00:48.497852 - Starting training
+2026-03-10 13:00:48.622360 - RMSE: 6.125, MAE: 5.331, R2: 0.024
+2026-03-10 13:00:48.624935 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model.pkl
+2026-03-10 13:06:31 - Training is Running ...
+2026-03-10 13:06:33.092029 - Starting training
+2026-03-10 13:06:33.129450 - RMSE: 6.125, MAE: 5.331, R2: 0.024
+2026-03-10 13:06:33.131467 - Model saved: /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/model/model_20260310_1306.pkl
+2026-03-10 13:06:33 - Training finished.
+2026-03-10 13:09:01 - Training is Running ...
+2026-03-10 13:12:01 - Training is Running ...

@@ -13,7 +13,7 @@ train:
 bash:
 
 	./scripts/collect.sh && \
-	 ./scripts/preprocessed.sh && \
+	./scripts/preprocessed.sh && \
 	./scripts/train.sh
 
 tests:
@@ -22,3 +22,6 @@ tests:
 	pytest tests/test_model.py
 
 all:
+	./scripts/collect.sh && \
+	./scripts/preprocessed.sh && \
+	./scripts/train.sh

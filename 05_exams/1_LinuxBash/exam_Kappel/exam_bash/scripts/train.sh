@@ -9,9 +9,9 @@
 
 
 
-LOGFILE = "logs/train.logs"
+LOG_FILE="logs/train.logs"    # NO " "!!!!
 
-echo "$(date + '%Y-%m-%d %H:%M:%S') - Training is Running ..." >> "$LOG_FILE"
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Training is Running ..." >> "$LOG_FILE"
 
-python3 src/train.py    # pthon3 works on every machine without venv
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Training finished." >> "$LOG_FILE"
+python3 src/train.py    # python3 works on every machine without venv
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Training finished." >> "$LOG_FILE"make
