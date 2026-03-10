@@ -1,0 +1,176 @@
+Hier ist die komplette Lösung als Überblick. Ich schreib dir alle Dateien durch:
+
+requirements.txt
+pandas
+scikit-learn
+xgboost
+
+scripts/collect.sh
+bash#!/bin/bash
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M")
+OUTPUT_FILE="data/raw/sales_${TIMESTAMP}.csv"
+LOG_FILE="logs/collect.logs"
+
+echo "=== $(date) ===" >> $LOG_FILE
+echo "header: timestamp,model,sales" > $OUTPUT_FILE
+
+for MODEL in rtx3060 rtx3070 rtx3080 rtx3090 rx6700; do
+    RESPONSE=$(curl -s "http://0.0.0.0:5000/${MODEL}")
+    SALES=$(echo $RESPONSE | grep -o '[0-9]*')
+    echo "$(date +"%Y-%m-%d %H:%M:%S"),${MODEL},${SALES}" >> $OUTPUT_FILE
+    echo "Collected: ${MODEL} -> ${SALES}" >> $LOG_FILE
+done
+
+echo "Saved to ${OUTPUT_FILE}" >> $LOG_FILE
+
+scripts/preprocessed.sh
+bash#!/bin/bash
+
+LOG_FILE="logs/preprocessed.logs"
+
+echo "=== $(date) ===" >> $LOG_FILE
+echo "Starting preprocessing..." >> $LOG_FILE
+
+python3 src/preprocessed.py >> $LOG_FILE 2>&1
+
+echo "Preprocessing done." >> $LOG_FILE
+
+scripts/train.sh
+bash#!/bin/bash
+
+LOG_FILE="logs/train.logs"
+
+echo "=== $(date) ===" >> $LOG_FILE
+echo "Starting training..." >> $LOG_FILE
+
+python3 src/train.py >> $LOG_FILE 2>&1
+
+echo "Training done." >> $LOG_FILE
+```
+
+---
+
+## `scripts/cron.txt`
+```
+* * * * * cd /home/ubuntu/exam_NAME/exam_bash && ./scripts/collect.sh
+* * * * * cd /home/ubuntu/exam_NAME/exam_bash && ./scripts/preprocessed.sh
+* * * * * cd /home/ubuntu/exam_NAME/exam_bash && ./scripts/train.sh
+
+src/preprocessed.py
+pythonimport pandas as pd
+import glob
+import os
+from datetime import datetime
+
+# Neueste raw-Datei finden
+files = glob.glob("data/raw/sales_*.csv")
+if not files:
+    print("No raw files found.")
+    exit(1)
+
+latest_file = max(files, key=os.path.getmtime)
+print(f"Processing: {latest_file}")
+
+df = pd.read_csv(latest_file)
+
+# Spalten umbenennen falls nötig
+df.columns = [c.strip() for c in df.columns]
+
+# Timestamp-Spalte entfernen (laut Test erwartet)
+if 'timestamp' in df.columns:
+    df = df.drop(columns=['timestamp'])
+
+# Pivot: eine Zeile pro Zeitpunkt, Spalten = Modelle
+if 'model' in df.columns and 'sales' in df.columns:
+    df = df.pivot_table(index=[], columns='model', values='sales', aggfunc='sum')
+    df = df.reset_index(drop=True)
+
+# Alle Werte als Integer
+df = df.fillna(0).astype(int)
+
+# Speichern
+timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+output_path = f"data/processed/sales_processed_{timestamp}.csv"
+df.to_csv(output_path, index=False)
+print(f"Saved to {output_path}")
+
+src/train.py
+pythonimport pandas as pd
+import glob
+import os
+import pickle
+from xgboost import XGBRegressor
+from sklearn.model_selection import train_test_split
+from datetime import datetime
+
+# Neueste processed-Datei finden
+files = glob.glob("data/processed/sales_processed_*.csv")
+if not files:
+    print("No processed files found.")
+    exit(1)
+
+latest_file = max(files, key=os.path.getmtime)
+print(f"Training on: {latest_file}")
+
+df = pd.read_csv(latest_file)
+
+# Features / Target (erste Spalte als Target, Rest als Features)
+if df.shape[1] < 2:
+    print("Not enough columns.")
+    exit(1)
+
+X = df.iloc[:, 1:]
+y = df.iloc[:, 0]
+
+# Fallback wenn zu wenig Zeilen: kein Split
+if len(df) < 5:
+    X_train, y_train = X, y
+else:
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = XGBRegressor(n_estimators=50)
+model.fit(X_train, y_train)
+
+# Modell speichern
+with open("model/model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+print("Model saved to model/model.pkl")
+
+Makefile
+makefile.PHONY: bash tests
+
+bash:
+	chmod +x scripts/collect.sh scripts/preprocessed.sh scripts/train.sh
+	bash scripts/collect.sh
+	bash scripts/preprocessed.sh
+	bash scripts/train.sh
+	crontab scripts/cron.txt
+	echo "Pipeline complete. Cron activated."
+
+tests:
+	python3 -m pytest tests/test_collect.py   --tb=short > logs/test_logs/test_collect.logs   2>&1
+	python3 -m pytest tests/test_preprocessed.py --tb=short > logs/test_logs/test_preprocessed.logs 2>&1
+	python3 -m pytest tests/test_model.py     --tb=short > logs/test_logs/test_model.logs     2>&1
+	echo "Tests done. Check logs/test_logs/"
+```
+
+---
+
+## Ablauf kurz erklärt
+```
+make bash
+  │
+  ├── collect.sh   → curl API → speichert data/raw/sales_YYYYMMDD_HHMM.csv
+  ├── preprocessed.sh → ruft preprocessed.py → data/processed/sales_processed_...csv
+  ├── train.sh     → ruft train.py → model/model.pkl
+  └── crontab      → lädt cron.txt → alles läuft ab jetzt jede Minute automatisch
+Kernkonzepte die du dir merken solltest:
+
+curl zum API-abrufen, Output mit >> in CSV schreiben
+glob + max(..., key=os.path.getmtime) = neueste Datei finden
+pivot_table um von long → wide Format zu kommen
+pickle.dump zum Modell speichern
+crontab scripts/cron.txt aktiviert den Cronjob
+* * * * * = jede Minute
