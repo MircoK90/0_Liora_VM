@@ -23,9 +23,9 @@ import os
 # Paths section
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-RAW_File = os.path.join(ROOT_DIR, "data", "raw", "sales_data.csv")
+RAW_DIR = os.path.join(ROOT_DIR, "data", "raw")    # before it ws static file RAW_FILE which was for testing ok
 PROCESSED_DIR = os.path.join(ROOT_DIR, "data", "processed")
-LOG_FILE = os.path.join(ROOT_DIR, "logs", "tests_logs", "test_preprocessed.logs")  # to change later
+LOG_FILE = os.path.join(ROOT_DIR, "logs", "preprocessed.logs")  # to change later (it was tets/logs/.....)
 
 
 
@@ -36,6 +36,13 @@ def preprocessing():
    # File Opener inside preprocessing!
    with open(LOG_FILE, "a") as log:    #log for log mode
       log.write(f"{datetime.now()} --- Starting preprocessing\n")
+
+
+   # RAW File
+   files = [f for f in os.listdir(RAW_DIR) if f.startswith("sales_") and f.endswith(".csv") and f != "sales_data.csv"]
+   latest = max(files, key=lambda f: os.path.getmtime(os.path.join(RAW_DIR, f)))
+   RAW_File = os.path.join(RAW_DIR, latest)
+
 
    # Load war file 
    df = pd.read_csv(RAW_File)   # to be sure always last file
@@ -49,7 +56,7 @@ def preprocessing():
 
 
    # existing dir
-   os.makedirs(PROCESSED_DIR, exist_ok=True)            # no linux mkdir 
+   os.makedirs(PROCESSED_DIR, exist_ok=True)            # no linux mkdir command
 
    # create (empty) ouput file
    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")   # format lile testscropt
@@ -66,4 +73,4 @@ def preprocessing():
 # gets executed only for debug
 if __name__ == "__main__":
    preprocessing()
-   print("test")
+   print("test_final end")

@@ -44,18 +44,18 @@ def train_model():
     # latest csv
     files = [f for f in os.listdir(RAW_DIR) if f.endswith(".csv")]    # f.end not forgett
     if not files:
-        raise FileNotFoundError("Np csv in Processing folder")
+        raise FileNotFoundError("No csv in data/processed")
     #latest csv - Filename Date
     latest = max(files, key=lambda f: os.path.getmtime(os.path.join(RAW_DIR, f)))
     df = pd.read_csv(os.path.join(RAW_DIR, latest))
 
 
-    # Feature eng
+    # Feature eng.
 
     if "model" not in df.columns or "sales" not in df.columns:
         raise ValueError("Expected columns 'model' and 'sales' not found.")
     #  
-    X = pd.get_dummies(df["model"])   # One-hot encoding
+    X = pd.get_dummies(df["model"])             # One-hot encoding
     y = df["sales"]
 
 

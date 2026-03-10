@@ -43,7 +43,8 @@ timestamp=$(date '+%Y%m%d_%H%M%S')      # plus inside!  WITHOUT " "!!!!!!
 file="$RAW_DIR/sales_$timestamp.csv"    
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Data ... " >> "$LOG_FILE"
-echo "timestamp,model,sales" > "$file"
+cp "$RAW_DIR/sales_data.csv" "$file"                # cp ultra important to concat the processed list old , aand new from the api!
+echo "" >> "$file"                                  # newline to keep format due concatineng
 
 # API integration
 MODELS=("rtx3060" "rtx3070" "rtx3080" "rtx3090" "rx6700") # as LIST!

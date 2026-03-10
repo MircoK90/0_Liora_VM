@@ -6,6 +6,7 @@ runnin?
 ystemctl status cron
 
 start:
+crontab scripts/train.sh
 crontab scripts/cron.txt
 
 apt start / test

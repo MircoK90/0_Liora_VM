@@ -16,4 +16,3 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - preprocessing ..." >> $LOG_FILE
 
 python src/preprocessed.py             #backbone works almost always
 echo "$(date '+%Y-%m-%d %H:%M:%S') - preprocessing finished." >> $LOG_FILE    #attention to the +
-
