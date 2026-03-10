@@ -1,3 +1,4 @@
+#!/bin/bash
 # -----------------------------------------------------------------------------
 # This script train.sh runs the Python program src/train.py.
 # This program trains a prediction model and saves the final model
@@ -6,7 +7,7 @@
 # -----------------------------------------------------------------------------
 
 
-#!/bin/bash
+
 
 LOGFILE = "logs/train.logs"
 

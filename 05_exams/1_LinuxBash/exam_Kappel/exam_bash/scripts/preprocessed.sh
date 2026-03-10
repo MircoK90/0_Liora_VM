@@ -1,4 +1,4 @@
-
+#!/bin/bash
 # =============================================================================
 # This script preprocessed.sh runs the program src/preprocessed.py
 # and logs the execution details in the log file
@@ -7,7 +7,7 @@
 
 # start: exam_bash/scripts/preprocessed.sh
 
-#!/bin/bash
+
 
 
 LOG_FILE="logs/preprocessed.logs"                                           #no " "

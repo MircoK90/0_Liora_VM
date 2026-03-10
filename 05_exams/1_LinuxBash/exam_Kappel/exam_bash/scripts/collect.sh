@@ -1,3 +1,5 @@
+#!/bin/bash
+# Bash Comand obligatory LINE!!!
 # ==============================================================================
 # Script: collect.sh
 # Description:
@@ -28,29 +30,57 @@
 # ==============================================================================
 
 
-#!/bin/bash
 
-RAW_DIR = "data/raw"
-LOG_FILE = "logs/collect.logs"
+
+RAW_DIR="data/raw"
+LOG_FILE="logs/collect.logs"
 
 mkdir -p "$RAW_DIR"
 mkdir -p "logs"
 
 # filevreation
-timestamp = $(date '+%Y%m%d_%H%M%S')      # plus inside!
-file = "$RAW_DIR/sales_$timestamp.csv"    
+timestamp=$(date '+%Y%m%d_%H%M%S')      # plus inside!  WITHOUT " "!!!!!!
+file="$RAW_DIR/sales_$timestamp.csv"    
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Data ... " >> "$LOG_FILE"
+echo "timestamp,model,sales" > "$file"
 
-# mk test
-cat <<EOF > "$file"
-timestamp,model,sales
-2025-04-25T09:06:57Z,rtx3060,13
-2025-04-25T09:06:57Z,rtx3070,17
-2025-04-25T09:06:57Z,rtx3080,17
-2025-04-25T09:06:57Z,rtx3090,14
-2025-04-25T09:06:57Z,rx6700,16
-EOF
+# API integration
+MODELS=("rtx3060" "rtx3070" "rtx3080" "rtx3090" "rx6700") # as LIST!
 
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Saved " >> "$LOG_FILE"
 
+for model in "${MODELS[@]}"; do
+    sales=$(curl -s "http://0.0.0.0:5000/$model")
+    ts=$(date '+%Y-%m-%dT%H:%M:%SZ')
+
+    echo "$ts,$model,$sales" >> "$file"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $model: $sales" >> "$LOG_FILE"
+done
+
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Saved: $file" >> "$LOG_FILE"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # mk test
+# cat <<EOF > "$file"
+# timestamp,model,sales
+# 2025-04-25T09:06:57Z,rtx3060,13
+# 2025-04-25T09:06:57Z,rtx3070,17
+# 2025-04-25T09:06:57Z,rtx3080,17
+# 2025-04-25T09:06:57Z,rtx3090,14
+# 2025-04-25T09:06:57Z,rx6700,16
+# EOF

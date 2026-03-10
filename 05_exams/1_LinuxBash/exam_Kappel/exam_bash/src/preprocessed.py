@@ -43,8 +43,11 @@ def preprocessing():
    # simple cleaner AND deleting timestamp due assert command in the tests scripts
    df = df.dropna()
    df = df.drop(columns = [col for col in df.columns if col =="timestamp"], errors="ignore")
-   df["model"] = df["model"].astype("category").cat.codes
+
+   df["model"] = df["model"].astype("category").cat.codes      
    df = df.astype(int)
+
+
    # existing dir
    os.makedirs(PROCESSED_DIR, exist_ok=True)            # no linux mkdir 
 
