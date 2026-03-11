@@ -504,3 +504,11 @@
 2026-03-10 16:57:02.079996 --- Starting preprocessing
 2026-03-10 16:57:02.090087 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260310_165702.csv
 2026-03-10 16:57:02 - preprocessing finished.
+2026-03-11 11:55:01 - preprocessing ...
+2026-03-11 11:55:03.897676 --- Starting preprocessing
+2026-03-11 11:55:03.964035 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260311_115503.csv
+2026-03-11 11:55:04 - preprocessing finished.
+2026-03-11 11:56:01 - preprocessing ...
+2026-03-11 11:56:02.433281 --- Starting preprocessing
+2026-03-11 11:56:02.444534 - SAving processed file : /home/ubuntu/05_exams/1_LinuxBash/exam_Kappel/exam_bash/data/processed/sales_processed_20260311_115602.csv
+2026-03-11 11:56:02 - preprocessing finished.

@@ -50,13 +50,18 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - Collection Data ... " >> "$LOG_FILE"
 
 
 # cp to concat new data from api, 
+# explainations
+# if it exits list all files like sales_20260310_165701.csv
+# -t ... 2>/dev/null | head -1, sorts modif date, newest first, takes lates filename
+# -z is string $latest ""?
+
 latest=$(ls -t "$RAW_DIR"/sales_2*.csv 2>/dev/null | head -1)
 if [ -z "$latest" ]; then
     cp "$RAW_DIR/sales_data.csv" "$file"                        # use sales_data
 else
     cp "$latest" "$file"                                        # use last created file (date)
 fi
-echo "" >> "$file"                                              # newline to keep format due concatineng
+# echo "" >> "$file"                                              # newline to keep format due concatineng / Debuging
 
 # API integration
 MODELS=("rtx3060" "rtx3070" "rtx3080" "rtx3090" "rx6700") # as LIST!
