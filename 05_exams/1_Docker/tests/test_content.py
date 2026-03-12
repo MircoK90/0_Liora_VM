@@ -39,6 +39,4 @@ actual score       = {score} ({actual_sentiment})
 
 
 
-# test
-
 
