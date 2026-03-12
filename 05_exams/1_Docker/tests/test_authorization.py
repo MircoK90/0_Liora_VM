@@ -12,9 +12,9 @@ tests = [
     ('alice', 'wonderland', 'v2', 200)
 ]
 
-for username, password, expected in tests:
+for username, password, version, expected in tests:
     r = requests.get(
-        url=f'http://{api_address}:{api_port}/permissions',
+        url=f'http://{api_address}:{api_port}/v1/sentiment',
         params={'username': username, 'password': password}
     )
     status_code = r.status_code

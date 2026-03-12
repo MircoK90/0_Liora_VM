@@ -31,8 +31,8 @@ expected sentiment = {expected_sentiment}
 actual score       = {score} ({actual_sentiment})
 ==>  {test_status}
 '''
-    print(output)
+        print(output)
 
-    if os.environ.get('LOG') == '1':
-        with open('logs/api_test.log', 'a') as f:
-            f.write(output)
+        if os.environ.get('LOG') == '1':
+            with open('logs/api_test.log', 'a') as f:
+                f.write(output)
