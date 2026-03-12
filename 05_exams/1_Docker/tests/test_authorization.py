@@ -14,17 +14,17 @@ tests = [
 
 for username, password, version, expected in tests:
     r = requests.get(
-        url=f'http://{api_address}:{api_port}/v1/sentiment',
-        params={'username': username, 'password': password}
+        url=f'http://{api_address}:{api_port}/{version}/sentiment',
+        params={'username': username, 'password': password, 'sentence': 'life is beautiful'}
     )
     status_code = r.status_code
     test_status = 'SUCCESS' if status_code == expected else 'FAILURE'
 
     output = f'''
 ============================
-    Authentication test
+    Authorication test
 ============================
-request done at "/permissions"
+request done at "/{version}/sentiment"
 | username="{username}"
 | password="{password}"
 expected result = {expected}

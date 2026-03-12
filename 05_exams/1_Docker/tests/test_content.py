@@ -36,3 +36,9 @@ actual score       = {score} ({actual_sentiment})
         if os.environ.get('LOG') == '1':
             with open('logs/api_test.log', 'a') as f:
                 f.write(output)
+
+
+
+# test
+
+

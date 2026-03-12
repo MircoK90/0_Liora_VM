@@ -1,5 +1,3 @@
-
-
 version: '3.8'
 
 services:
@@ -11,18 +9,15 @@ services:
     networks:
       - test_network
 
-
-
-# img build section
   test_authentication:
     build: .
     container_name: test_authentication
-    command: python /app/test_authentication.py    # command priority instead of CMD
+    command: python /app/test_authentication.py
     environment:
-      - API_ADDRESS=api         # ohne " "!"!!"
+      - API_ADDRESS=api
       - LOG=1
     volumes:
-      - ./logs:/app/logs      # container 
+      - ./logs:/app/logs
     networks:
       - test_network
     depends_on:
@@ -40,7 +35,8 @@ services:
     networks:
       - test_network
     depends_on:
-      - test_authentication
+      test_authentication:
+        condition: service_completed_successfully
 
   test_content:
     build: .
@@ -54,7 +50,8 @@ services:
     networks:
       - test_network
     depends_on:
-      - test_authorization
+      test_authorization:
+        condition: service_completed_successfully
 
 networks:
   test_network:

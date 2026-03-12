@@ -1,0 +1,63 @@
+
+
+version: '3.8'
+
+services:
+  api:
+    image: datascientest/fastapi:1.0.0
+    container_name: api
+    ports:
+      - "8000:8000"
+    networks:
+      - test_network
+
+
+
+# img build section
+test_authentication:
+  build: .
+  container_name: test_authentication
+  command: python /app/test_authentication.py    # command priority instead of CMD
+  environment:
+    - API_ADDRESS=api         # ohne " "!"!!"
+    - LOG=1
+  volumes:
+    - ./logs:/app/logs      # container 
+  networks:
+    - test_network
+  depends_on:
+    - api
+
+test_authorization:
+  build: .
+  container_name: test_authorization
+  command: python /app/test_authorization.py
+  environment:
+    - API_ADDRESS=api
+    - LOG=1
+  volumes:
+    - ./logs:/app/logs
+  networks:
+    - test_network
+  depends_on:
+    test_authentication:
+      condition: service_completed_successfully
+
+test_content:
+  build: .
+  container_name: test_content
+  command: python /app/test_content.py
+  environment:
+    - API_ADDRESS=api
+    - LOG=1
+  volumes:
+    - ./logs:/app/logs
+  networks:
+    - test_network
+  depends_on:
+    test_authorization:
+      condition: service_completed_successfully
+
+networks:
+  test_network:
+    driver: bridge
