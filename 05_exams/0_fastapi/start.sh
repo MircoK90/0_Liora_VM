@@ -4,4 +4,3 @@ exec bash --init-file <(echo ". ~/.bashrc; . /home/ubuntu/05_exams/0_fastapi/ven
 
 
 
-

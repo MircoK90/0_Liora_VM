@@ -1,6 +1,6 @@
 # auth.py
 
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import HTTPException, Depends
 from fastapi import Header
 
 
@@ -36,10 +36,9 @@ def get_current_user(auth: str = Depends(parse_basic_auth)):
     username, password = auth
     if username not in USERS or USERS[username] != password:
         raise HTTPException(status_code=401, detail="Invalid credentials")
-    
-    if username in USERS and USERS[username] == password:
-        return username
-        
+
+    return username
+
 
 def require_admin(auth = Depends(parse_basic_auth)):
     username, password = auth

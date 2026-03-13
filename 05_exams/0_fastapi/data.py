@@ -1,8 +1,9 @@
-# data.py  "read from df"
+# data.py
+
+# loads the Data from the excel file into a df
 
 import pandas as pd
 from models import Question
-from logic import generate_mcq
 
 # Formats and saves the question in a class 
 def load_questions(path: str) -> list[Question]:

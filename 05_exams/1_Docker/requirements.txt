@@ -1,0 +1,6 @@
+Requests==2.32.5
+
+
+
+# Docker is not a Python library
+# So do not belong in requirements.txt

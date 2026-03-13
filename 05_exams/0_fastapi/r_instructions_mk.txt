@@ -1,9 +1,22 @@
 
 #starting
 
-
-
+first start api with:
 uvicorn main:api --host 0.0.0.0 --port 8000 --reload
-Browser: IP:8000 or localhost insteadt of IP
+(This starts the main.py, the api)
 
-models -> base classes 
+Secoundly:
+Start the api questions test with:
+bash test_api.sh
+
+Change test_api.sh if u like and see the results
+
+
+_______________________________________________________
+
+i let commentary inside for a reason for tracebility
+that wen i look later in teh code i can recap my learning process a little bit
+
+To do this in seperatly files i wanted it like this
+to learn cooding better in practice and toughtl me still some good stuff once again
+

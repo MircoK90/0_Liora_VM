@@ -3,6 +3,9 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List
 
+# Class defines Format and Scheme, pydantic does a validation and converts to JSON
+# from List 
+
 class Question(BaseModel):       # BaseModel converts API Format trough Json() conversion
 	question: str
 	subject: str
@@ -14,15 +17,15 @@ class Question(BaseModel):       # BaseModel converts API Format trough Json() c
 	answerD: Optional[str]=None  	  #mk col remark is ignored
 
 
-
-	def answers(self) ->List[str]:
-		"""Gives back all exsiting answers"""
-		out = [self.answerA, self.answerB]
-		if self.answerC:
-			out.append(self.answerC)
-		if self.answerD:
-			out.append(self.answerD)
-		return out           #remark is ignored
+	# for testing Purpose. Can return only the correct answers
+	# def answers(self) ->List[str]:
+	# 	"""Gives back all exsiting answers"""
+	# 	out = [self.answerA, self.answerB]
+	# 	if self.answerC:
+	# 		out.append(self.answerC)
+	# 	if self.answerD:
+	# 		out.append(self.answerD)
+	# 	return out           #remark is ignored
 
 
 class NewQuestion(BaseModel):
@@ -35,4 +38,7 @@ class NewQuestion(BaseModel):
 	answerC: Optional[str] = None
 	answerD: Optional[str] = None
 
+# alternative with inheritance
+class NewQuestion(Question):
+    correct: str = Field(..., min_length=1, max_length=1)
 
