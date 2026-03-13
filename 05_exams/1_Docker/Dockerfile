@@ -8,5 +8,5 @@ RUN pip install requests
 
 COPY tests/ /app/
 
-# fallback "startingpoint" when startzing seperatly
+# fallback foir staring containers manually
 CMD ["python", "authentication.py"]

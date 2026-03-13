@@ -32,6 +32,6 @@ actual result   = {status_code}
 '''
     print(output)
 
-    if os.environ.get('LOG') == '1':
+    if os.environ.get('LOG') == '1':  # via yaml
         with open('logs/api_test.log', 'a') as f:
             f.write(output)

@@ -7,14 +7,14 @@ mkdir -p logs
 docker build -t exam_tests .   # dont forget the "."
 
 # start composition
-docker compose down
+docker compose down     # for runtrough shut everything down before
 docker compose up --abort-on-container-exit  # stops here when container are while runnung
 
-# copy logs if they exist AND LOG=1
+# central log.txt file and Runnrtrough test after contr+c
 if [ -f logs/api_test.log ]; then
-    cp logs/api_test.log log.txt
+    cp logs/api_test.log log.log
+    echo "Done, Results in log.log"
 else
     echo "WARN: logs/api_test.log not found"
 fi
 
-echo "Done, Results in log.txt"

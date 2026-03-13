@@ -1,0 +1,13 @@
+
+
+start with bash ./setup.sh
+
+delete the log file on base file and under logs and it should reapear
+
+in yaml runs trough all the three containers after api start,
+then consecutively writeing there inputs onto the log file
+
+these appear afterwards then in logs/test_log on client "machine"
+
+
+mirco kappel
