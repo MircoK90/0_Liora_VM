@@ -2,7 +2,9 @@
 import random
 from models import Question
 
-VALID_COUNTS = {5, 10, 20}   # from the task
+# Requriement
+VALID_COUNTS = {5, 10, 20}
+
 
 def filter_questions(questions: list[Question], use: str, subjects: list[str]) -> list[Question]:
     """filters (use) ans categories (subjects)."""
@@ -24,7 +26,7 @@ def select_random(questions: list[Question], n: int) -> list[Question]:
 
 
 def generate_mcq(questions: list[Question], use: str, subjects: list[str], n: int) -> list[Question]:
-    """Kombiniert Filter + Zufallsauswahl."""
+    """Returns the fijnal question compilation. Combines filter + random from file logic"""
     filtered = filter_questions(questions, use, subjects)
     selected = select_random(filtered, n)
     return selected
