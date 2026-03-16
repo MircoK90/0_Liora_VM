@@ -164,3 +164,5 @@ cython_debug/
 
 # MLflow Project
 Miniconda3-latest-Linux-x86_64.sh
+env_mlflow/
+mlruns/
