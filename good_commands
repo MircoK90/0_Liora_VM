@@ -6,17 +6,25 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 eval "$(/home/ubuntu/miniconda3/bin/conda shell.bash hook)"
 
+
+
+mkdir -p mlruns
 mlflow server \
   --host 0.0.0.0 \
   --port 8080 \
-  --backend-store-uri file:///absolute/path/to/mlruns \
-  --default-artifact-root file:///absolute/path/to/mlruns \
-  --serve-artifactssor
+  --backend-store-uri file:./mlruns \
+  --default-artifact-root file:./mlruns \
+  --serve-artifacts
 
-  source env_mlflow/bin/activate
 
-  # Show processes running on port 8080
+
+source env_mlflow/bin/activate
+
+# Show processes running on port 8080
 lsof -i:8080
 
 # Stop processes running on port 8080 
 kill -9 $(lsof -t -i:8080)
+
+mlflow run src/ --experiment-id EXPERIMENT_ID --run-name first_run_reproduced --env-manager=local
+mlflow run src/ --experiment-id 39e3832df3bf44bdbf9a492f57cf3fe7 --run-name MLProject --env-manager=local
