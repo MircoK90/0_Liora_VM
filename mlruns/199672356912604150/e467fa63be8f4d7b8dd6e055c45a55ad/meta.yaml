@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/05_exams/2_mflow/mlruns/199672356912604150/e467fa63be8f4d7b8dd6e055c45a55ad/artifacts
+end_time: 1773657114136
+entry_point_name: ''
+experiment_id: '199672356912604150'
+lifecycle_stage: active
+run_id: e467fa63be8f4d7b8dd6e055c45a55ad
+run_name: rist_run
+run_uuid: e467fa63be8f4d7b8dd6e055c45a55ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773657111756
+status: 3
+tags: []
+user_id: ubuntu

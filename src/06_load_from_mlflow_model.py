@@ -5,7 +5,7 @@ import pandas as pd
 # 1. Loading data
 # TODO: Replace with the path to your dataset
 print("Loading data...")
-data = pd.read_csv(None)
+data = pd.read_csv("data/fake_data.csv")
 X = data.drop(columns=["date", "demand"])
 X = X.astype('float')
 
@@ -18,7 +18,7 @@ print("Loading model...")
 model = mlflow.sklearn.load_model(model_path)
 
 # 4. Make predictions on the entire dataset
-print("Calculating predictions...")
+print("Calculating predicd ctions...")
 predictions = model.predict(X)
 
 # 5. Calculate and display the average of predictions

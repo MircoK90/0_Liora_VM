@@ -12,7 +12,7 @@ mlflow.set_tracking_uri("http://127.0.0.1:8080")
 
 # Define experiment name, run name and artifact_path name
 apple_experiment = mlflow.set_experiment("Apple_Models")
-run_name = "first_run"
+run_name = "rist_run"
 artifact_path = "rf_apples"
 
 # Import Database
@@ -21,17 +21,17 @@ X = data.drop(columns=["date", "demand"])
 X = X.astype('float')
 y = data["demand"]
 X_train, X_val, y_train, y_val = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.25, random_state=42
 )
 
 # Train model
 params = {
-    "n_estimators": 10,
+    "n_estimators": 15,
     "max_depth": 10,
     "random_state": 42,
 }
 rf = RandomForestRegressor(**params)
-rf.fit(X_train, y_train)
+rf.fit(X_train, y_train)b
 
 # Evaluate model
 y_pred = rf.predict(X_val)

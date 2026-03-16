@@ -1,0 +1,22 @@
+# Download Miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Install Miniconda
+bash Miniconda3-latest-Linux-x86_64.sh
+
+eval "$(/home/ubuntu/miniconda3/bin/conda shell.bash hook)"
+
+mlflow server \
+  --host 0.0.0.0 \
+  --port 8080 \
+  --backend-store-uri file:///absolute/path/to/mlruns \
+  --default-artifact-root file:///absolute/path/to/mlruns \
+  --serve-artifactssor
+
+  source env_mlflow/bin/activate
+
+  # Show processes running on port 8080
+lsof -i:8080
+
+# Stop processes running on port 8080 
+kill -9 $(lsof -t -i:8080)

@@ -160,11 +160,7 @@ cython_debug/
 #.idea/
 
 # runs MLflow
-mlruns/
-
 # virtualenv
-env_mlflow/
 
 # MLflow Project
-Apple_Project/
-apple_project/
+Miniconda3-latest-Linux-x86_64.sh
