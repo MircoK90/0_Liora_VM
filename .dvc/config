@@ -1,0 +1,4 @@
+[core]
+    remote = local_remote
+['remote "local_remote"']
+    url = ../09_tests/Template_MLOps_accidents/dvc_remote
