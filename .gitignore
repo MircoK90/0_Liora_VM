@@ -11,5 +11,8 @@ __pycache__/
 .kube/
 *.log
 *.joblib
+dvc_remote/
 
 
+
+dvc_remote/
