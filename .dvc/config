@@ -1,4 +1,7 @@
 [core]
-    remote = local_remote
+    remote = origin
 ['remote "local_remote"']
     url = ../09_tests/Template_MLOps_accidents/dvc_remote
+['remote "origin"']
+    url = s3://dvc
+    endpointurl = https://dagshub.com/MircoK90/0_Liora_VM.s3
